@@ -18,6 +18,8 @@ public class Aplicacion {
     public static void main(String[] args) {
         
         SpringApplication.run(Aplicacion.class, args);
+        System.out.println("Un mensaje");
+        
     }
     
     
