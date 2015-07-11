@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package org.unitec.maven;
+import org.springframework.boot.context.embedded.*;
+import org.springframework.stereotype.Component;
 
-/**
- *
- * @author T-107
- */
-public class PersonalizarBeans {
-    
+@Component
+public class PersonalizarBeans implements EmbeddedServletContainerCustomizer {
+
+    @Override
+    public void customize(ConfigurableEmbeddedServletContainer container) {
+        container.setPort(9000);
+    }
+
 }
+    
