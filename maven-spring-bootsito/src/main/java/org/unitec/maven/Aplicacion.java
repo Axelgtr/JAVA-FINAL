@@ -15,10 +15,14 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class Aplicacion {
  
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception{
         
         SpringApplication.run(Aplicacion.class, args);
         System.out.println("Un mensaje");
+        
+        Archivo objeto = new Archivo();
+        System.out.println(objeto.leer());
+        
         
     }
     

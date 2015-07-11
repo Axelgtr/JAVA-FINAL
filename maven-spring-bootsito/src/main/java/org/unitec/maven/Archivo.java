@@ -15,7 +15,7 @@ import java.io.FileInputStream;
 public class Archivo {
     public String leer()throws Exception{
         //LEER EL TEXTO DE UN ARCHIVO, CREANDO LA CLASE LLAMADA Archivo
-        File file = new File("Bibliotecas/Documentos/Archivito");
+        File file = new File("Bibliotecas/Documentos/Archivito.txt");
         FileInputStream fis = new FileInputStream(file);
         StringBuilder sb = new StringBuilder();
         
