@@ -23,9 +23,10 @@ public class Aplicacion {
         
         //se invoca al contexto d spling ↓ ↓ ↓ ↓
         AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext (ConfiguracionBasica.class);
-        
+        //                         ↓bean (leer) ↓
         Leer serviLeer = ctx.getBean(Leer.class);
         System.out.println(serviLeer.leer());
+        
                 
         
     }

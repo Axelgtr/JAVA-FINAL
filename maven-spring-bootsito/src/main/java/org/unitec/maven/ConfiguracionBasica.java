@@ -16,7 +16,7 @@ public class ConfiguracionBasica {
     //generar bin que se llamara igual (Leer)
     @Bean
     Leer servicioLeer(){
-      Archivo leer = new  Archivo ();
+      Leer leer = new  LeerMySQL();
       return leer;
         
     }
