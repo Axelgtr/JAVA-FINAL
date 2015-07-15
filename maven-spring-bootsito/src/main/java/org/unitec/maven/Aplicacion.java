@@ -20,7 +20,7 @@ public class Aplicacion {
         SpringApplication.run(Aplicacion.class, args);
         System.out.println("Un mensaje");
         
-        Archivo objeto = new Archivo();
+        Leer objeto = new Archivo();
         System.out.println(objeto.leer());
         
         

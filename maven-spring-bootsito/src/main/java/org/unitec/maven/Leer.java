@@ -11,6 +11,6 @@ package org.unitec.maven;
  */
 public interface Leer {
     //metodo abstracto ↓↓↓↓
-    public String leer();
+    public String leer() throws Exception;
     
 }
