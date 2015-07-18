@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class ControladorLeer {
     //cada servicio es un metodo
-    @RequestMapping(value="/leer", method = RequestMethod.GET, headers = {"Accept=text/html"})
+    @RequestMapping(value="/leer", method = RequestMethod.GET, headers = {"Accept=Application/pdf"})
     @ResponseBody String leer () throws Exception{
         return "aqui vamos a mostrar el servicio leer que hicimos ya";
     }
