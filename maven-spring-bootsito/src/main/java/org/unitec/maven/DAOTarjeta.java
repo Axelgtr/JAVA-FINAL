@@ -43,9 +43,9 @@ public class DAOTarjeta {
         
     }
     
-    public Arraylist<Tarjeta> buscarTodos() throws Exception{
+    public ArrayList<Tarjeta> buscarTodos() throws Exception{
         Criteria cri=ses.createCriteria(Tarjeta.class);
-        ArrayList<Tarjet<> gastos=(Arraylist<Tarjeta>) cri.list();
+        ArrayList<Tarjeta> gastos=(ArrayList<Tarjeta>) cri.list();
         cerrarSesion();
         return gastos;
     }
