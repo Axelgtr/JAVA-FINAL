@@ -5,10 +5,49 @@
  */
 package org.unitec.maven;
 
+import java.util.ArrayList;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+
+
 /**
  *
  * @author T-107
  */
 public class DAOTarjeta {
     
-}
+    SessionFactory fac;
+    Session ses;
+    Transaction tranza;
+    
+    public DAOTarjeta(){
+        fac= HibernateUtilidades.getSessionFactory();
+        ses= fac.openSession();
+        tranza=ses.beginTransaction();
+        
+    }
+    
+    
+    public void cerrarSesion(){
+        tranza.commit();
+        ses.close();
+    }
+    
+    public void guardar(Tarjeta g) throws Exception{
+        
+        ses.save(g);
+        cerrarSesion();
+        
+    }
+    
+    public Arraylist<Tarjeta> buscarTodos() throws Exception{
+        Criteria cri=ses.createCriteria(Tarjeta.class);
+        ArrayList<Tarjet<> gastos=(Arraylist<Tarjeta>) cri.list();
+        cerrarSesion();
+        return gastos;
+    }
+    }
+
