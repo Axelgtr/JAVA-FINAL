@@ -1,7 +1,8 @@
 
 package org.unitec.maven;
 
-//aqui se enlazan los beans
+//Se enlazan los beans
+//AXEL
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
 public class ConfiguracionBasica {
     @Bean
     Leer servicioleer(){
-        Leer leer=new LeerMySQL();//inyeccion de subtipo
+        Leer leer=new LeerMySQL();
+    //inyeccion
         return leer;
     }
     

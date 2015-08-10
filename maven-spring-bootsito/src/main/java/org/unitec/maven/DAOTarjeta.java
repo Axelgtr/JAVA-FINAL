@@ -19,9 +19,9 @@ import org.hibernate.criterion.Restrictions;
  */
 public class DAOTarjeta {
     
-    SessionFactory fac;
-    Session ses;
-    Transaction tranza;
+    private SessionFactory fac;
+    private Session ses;
+    private Transaction tranza;
     
     public DAOTarjeta(){
         fac= HibernateUtilidades.getSessionFactory();
@@ -31,23 +31,43 @@ public class DAOTarjeta {
     }
     
     
-    public void cerrarSesion(){
+    public void cerrarSesionT(){
         tranza.commit();
         ses.close();
     }
     
-    public void guardar(Tarjeta g) throws Exception{
+    public void guardarT(Tarjeta T) throws Exception{
         
-        ses.save(g);
-        cerrarSesion();
+        ses.save(T);
+        cerrarSesionT();
         
     }
     
-    public ArrayList<Tarjeta> buscarTodos() throws Exception{
+    public ArrayList<Tarjeta> buscarTodosT() throws Exception{
         Criteria cri=ses.createCriteria(Tarjeta.class);
         ArrayList<Tarjeta> gastos=(ArrayList<Tarjeta>) cri.list();
-        cerrarSesion();
+        cerrarSesionT();
         return gastos;
     }
+    
+    
+      public  void actualizarT(Tarjeta T)throws Exception{
+        ses.update(T);
+        cerrarSesionT();
     }
+      
+      public void borrarT(Tarjeta T)throws Exception{
+           ses.delete(T);
+           cerrarSesionT();
+       }
+      
+      public Tarjeta buscarPorIdT(Integer id)throws Exception{
+         Tarjeta T=(Tarjeta) ses.createCriteria(Tarjeta.class).add(Restrictions.idEq(id)).uniqueResult();
+           
+        return T;
+        
+    }
+}
 
+      
+  
